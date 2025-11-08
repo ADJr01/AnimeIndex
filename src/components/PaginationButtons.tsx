@@ -13,7 +13,7 @@ const PaginationButtons: React.FC<Props> = ({ currentPage, lastPage, onChange })
             onClick={() => onChange(currentPage - 1)}
             className="px-4 py-2 rounded-md bg-purple-600 hover:bg-purple-700 disabled:opacity-40 transition"
         >
-            Prev
+            &lt;
         </button>
         <span className="px-4 py-2 bg-gray-800 rounded-md">
       Page {currentPage} / {lastPage || 1}
@@ -23,7 +23,7 @@ const PaginationButtons: React.FC<Props> = ({ currentPage, lastPage, onChange })
             onClick={() => onChange(currentPage + 1)}
             className="px-4 py-2 rounded-md bg-purple-600 hover:bg-purple-700 disabled:opacity-40 transition"
         >
-            Next
+            &gt;
         </button>
     </div>
 );
