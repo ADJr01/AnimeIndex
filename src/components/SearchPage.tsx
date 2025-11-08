@@ -45,13 +45,22 @@ const SearchPage: React.FC = () => {
                 <p className="text-center text-red-400 mt-2 text-sm">{error}</p>
             )}
 
-            {!loading && !error && input.length>1 &&  list.length > 0 && (
-                <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full animate-fadeIn">
-                    {list.map((anime) => (
-                        <AnimeCard key={anime.mal_id} anime={anime} />
-                    ))}
-                </div>
+            {!loading && !error && list.length > 0 && input.length > 0 && (
+                <>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        {list.map((anime) => (
+                            <AnimeCard key={anime.mal_id} anime={anime} />
+                        ))}
+                    </div>
+
+                    <PaginationButtons
+                        currentPage={pagination?.current_page ?? page}
+                        lastPage={pagination?.last_visible_page ?? 1}
+                        onChange={(p) => dispatch(setPage(p))}
+                    />
+                </>
             )}
+
 
             {!loading && !error && list.length === 0 && input.length > 0 && (
                 <p className="text-gray-300 text-sm">No anime found. Try another search!</p>
