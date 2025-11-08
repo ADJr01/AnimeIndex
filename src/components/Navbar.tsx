@@ -6,9 +6,9 @@ const Navbar = () => (
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
             <Link
                 to="/"
-                className="text-3xl font-poppins font-bold bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-float"
+                className="text-3xl font-poppins font-bold bg-gradient-to-r from-pink-500 via-pink-300 via-purple-400 via-blue-300 to-blue-500 bg-clip-text text-transparent animate-float"
             >
-                Anime Index
+                AnimeIndex
             </Link>
         </div>
     </nav>
